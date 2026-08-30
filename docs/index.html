@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>プロトコル喫茶 | ゆるく聴けるネットワーク雑談ポッドキャスト</title>
+<meta name="description" content="とある町の片隅にある、小さな喫茶店「プロトコル喫茶」。インターネットの裏側で働くプロトコルたちが常連としてやってくる、ゆるいネットワーク雑談ポッドキャストです。">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #FBF7EF;
+    --card: #F3ECDD;
+    --line: #E3DCC9;
+    --line-strong: #D8CFB8;
+    --ink: #3D3223;
+    --ink-soft: #4A4030;
+    --ink-muted: #7A6E56;
+    --ink-faint: #8A7B5C;
+    --accent: #C1592F;
+    --accent-soft: #FAECE7;
+    --paper: #FFFDF8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink-soft);
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* --- nav --- */
+  header.site-nav {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-inner .brand {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+  }
+  .nav-inner nav a {
+    font-size: 13px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .nav-inner nav a:hover { color: var(--ink); }
+
+  /* --- hero --- */
+  .hero {
+    text-align: center;
+    padding: 72px 24px 56px;
+  }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 700;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--ink);
+    margin: 0 0 20px;
+    letter-spacing: 0.03em;
+  }
+  .hero .tagline {
+    font-size: 16px;
+    color: var(--ink-muted);
+    margin: 0 auto 32px;
+    max-width: 32em;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 13px 28px;
+    border-radius: 26px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.15s ease;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-primary svg { width: 16px; height: 16px; }
+
+  /* --- section shared --- */
+  section {
+    padding: 44px 24px;
+    border-top: 1px solid var(--line);
+  }
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 20px;
+  }
+
+  /* --- about --- */
+  .about p {
+    font-size: 15px;
+    margin: 0 0 1.2em;
+  }
+  .about p:last-child { margin-bottom: 0; }
+
+  /* --- episode embed --- */
+  .episode-embed iframe {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+  }
+
+  /* --- regulars --- */
+  .regular-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+  }
+  .regular-card:last-child { margin-bottom: 0; }
+  .regular-card.pending { opacity: 0.55; }
+
+  .avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--accent-soft);
+  }
+  .avatar.muted { background: #5F5E5A; color: #F1EFE8; }
+  .avatar svg { width: 22px; height: 22px; }
+
+  .regular-info .name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .regular-info .desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  /* --- footer --- */
+  footer {
+    padding: 32px 24px 48px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  .link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--line-strong);
+    border-radius: 20px;
+    padding: 9px 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .link-pill:hover { border-color: var(--ink-faint); }
+  .link-pill svg { width: 15px; height: 15px; }
+
+  @media (max-width: 480px) {
+    .hero { padding: 56px 20px 44px; }
+    section { padding: 36px 20px; }
+    .nav-inner nav a { margin-left: 14px; }
+  }
+</style>
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <span class="brand">プロトコル喫茶</span>
+    <nav>
+      <a href="#about">番組について</a>
+      <a href="#episodes">エピソード</a>
+      <a href="#regulars">常連紹介</a>
+    </nav>
+  </div>
+</header>
+
+<div class="hero">
+  <div class="eyebrow">PROTOCOL CAFE</div>
+  <h1>プロトコル喫茶</h1>
+  <p class="tagline">今日も誰かが、ふらっと立ち寄ります。<br>ネットワークの裏側で働く"プロトコル"たちの、行きつけの喫茶店。</p>
+  <a class="btn-primary" href="https://open.spotify.com/show/033EqVFt9xoLTCfYa4RJBw" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+    Spotifyで聴く
+  </a>
+</div>
+
+<section id="about" class="about">
+  <div class="wrap">
+    <div class="section-label">この番組について</div>
+    <p>とある町の片隅にある、小さな喫茶店「プロトコル喫茶」。</p>
+    <p>ここに集まるのは、インターネットの裏側で働く"プロトコル"たちの行きつけの常連ばかり。宅配便のお兄さん、几帳面な輸送屋、町の住所録係……そんな彼らが、マスターと仕事の話や人間(?)関係の話に花を咲かせます。</p>
+    <p>専門用語もカタカナ語も出てきますが、身構えなくて大丈夫。難しい説明はせず、ただの雑談として聞いているうちに、気づけば「ネットワークってこういうことだったのか」と分かるようになる——そんなポッドキャストを目指しています。</p>
+    <p>エンジニアの方はもちろん、普段「HTTP」や「DNS」という言葉を聞いても実感が湧かない、という方にこそ聞いてほしい番組です。</p>
+    <p>毎回、違う"常連"が顔を出します。今日は誰が来店するでしょうか。</p>
+  </div>
+</section>
+
+<section id="episodes" class="episode-embed">
+  <div class="wrap">
+    <div class="section-label">最新エピソード</div>
+    <iframe
+      src="https://open.spotify.com/embed/episode/214F3nUhzZdUiW1NdBMKCK?utm_source=generator"
+      width="100%"
+      height="152"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      title="第1話 今日もひとっ走り、HTTP(S) - Spotify埋め込みプレーヤー">
+    </iframe>
+  </div>
+</section>
+
+<section id="regulars">
+  <div class="wrap">
+    <div class="section-label">今までの常連たち</div>
+
+    <div class="regular-card">
+      <div class="avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 18V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/>
+          <path d="M14 9h4l3 3v5a1 1 0 0 1-1 1h-1"/>
+          <circle cx="7" cy="18" r="2"/>
+          <circle cx="17" cy="18" r="2"/>
+        </svg>
+      </div>
+      <div class="regular-info">
+        <p class="name">HTTP(S)さん</p>
+        <p class="desc">町のあちこちの店に注文の品を届ける、宅配便のお兄さん。制服姿で台車を引きながら、配達の合間にふらっと店に立ち寄る常連。几帳面なTCPの兄貴や、町の住所録係のDNSちゃんとも顔なじみ。</p>
+      </div>
+    </div>
+
+    <div class="regular-card pending">
+      <div class="avatar muted">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 2-3 4"/>
+          <line x1="12" y1="17" x2="12.01" y2="17"/>
+          <circle cx="12" cy="12" r="10"/>
+        </svg>
+      </div>
+      <div class="regular-info">
+        <p class="name">近日来店</p>
+        <p class="desc">次にどんな常連が顔を出すか、お楽しみに。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <a class="link-pill" href="https://open.spotify.com/show/033EqVFt9xoLTCfYa4RJBw" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+    Spotify
+  </a>
+  <a class="link-pill" href="https://x.com/RT2231_scratch" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    X
+  </a>
+</footer>
+
+</body>
+</html>
