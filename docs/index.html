@@ -111,6 +111,20 @@
   .btn-primary:hover { opacity: 0.85; }
   .btn-primary svg { width: 16px; height: 16px; }
 
+  .platform-links {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .platform-links a {
+    color: var(--ink-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--line-strong);
+  }
+  .platform-links a:hover { color: var(--ink); }
+  .platform-links .sep { margin: 0 8px; color: var(--line-strong); }
+
   /* --- section shared --- */
   section {
     padding: 44px 24px;
@@ -174,8 +188,19 @@
   .regular-info .desc {
     font-size: 13px;
     color: var(--ink-muted);
-    margin: 0;
+    margin: 0 0 8px;
   }
+  .regular-info .desc:last-child { margin-bottom: 0; }
+  .episode-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .episode-link:hover { text-decoration: underline; }
 
   /* --- footer --- */
   footer {
@@ -198,6 +223,11 @@
   }
   .link-pill:hover { border-color: var(--ink-faint); }
   .link-pill svg { width: 15px; height: 15px; }
+  .link-pill.quiet {
+    color: var(--ink-faint);
+    border-style: dashed;
+    cursor: default;
+  }
 
   @media (max-width: 480px) {
     .hero { padding: 56px 20px 44px; }
@@ -227,6 +257,11 @@
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
     Spotifyで聴く
   </a>
+  <p class="platform-links">
+    <a href="https://podcasts.apple.com/us/podcast/プロトコル喫茶/id6805294348" target="_blank" rel="noopener">Apple Podcasts</a>
+    <span class="sep">/</span>
+    Amazon Musicでも配信中
+  </p>
 </div>
 
 <section id="about" class="about">
@@ -237,6 +272,7 @@
     <p>専門用語もカタカナ語も出てきますが、身構えなくて大丈夫。難しい説明はせず、ただの雑談として聞いているうちに、気づけば「ネットワークってこういうことだったのか」と分かるようになる——そんなポッドキャストを目指しています。</p>
     <p>エンジニアの方はもちろん、普段「HTTP」や「DNS」という言葉を聞いても実感が湧かない、という方にこそ聞いてほしい番組です。</p>
     <p>毎回、違う"常連"が顔を出します。今日は誰が来店するでしょうか。</p>
+    <p>Spotify、Apple Podcasts、Amazon Musicで配信中です。</p>
   </div>
 </section>
 
@@ -272,6 +308,9 @@
       <div class="regular-info">
         <p class="name">HTTP(S)さん</p>
         <p class="desc">町のあちこちの店に注文の品を届ける、宅配便のお兄さん。制服姿で台車を引きながら、配達の合間にふらっと店に立ち寄る常連。几帳面なTCPの兄貴や、町の住所録係のDNSちゃんとも顔なじみ。</p>
+        <a class="episode-link" href="https://open.spotify.com/episode/214F3nUhzZdUiW1NdBMKCK" target="_blank" rel="noopener">
+          第1話「今日もひとっ走り、HTTP(S)」を聴く →
+        </a>
       </div>
     </div>
 
@@ -296,6 +335,13 @@
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
     Spotify
   </a>
+  <a class="link-pill" href="https://podcasts.apple.com/us/podcast/プロトコル喫茶/id6805294348" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.008 0C5.375 0 0 5.376 0 12.008c0 6.633 5.376 12.009 12.008 12.009 6.633 0 12.009-5.376 12.009-12.009C24.017 5.376 18.641 0 12.008 0zm0 3.694a5.61 5.61 0 0 1 5.612 5.577c.006 1.911-.995 3.59-1.968 4.674a.51.51 0 0 1-.856-.155c-.135-.354-.276-.703-.416-1.049-.064-.156-.017-.336.115-.44a4.14 4.14 0 0 0 1.586-3.243 4.076 4.076 0 0 0-4.093-4.079 4.075 4.075 0 0 0-4.05 4.128 4.14 4.14 0 0 0 1.622 3.222c.13.104.176.281.114.436-.139.349-.279.7-.413 1.052a.51.51 0 0 1-.858.152C7.42 12.28 6.393 10.588 6.4 8.665a5.61 5.61 0 0 1 5.608-4.971zm.02 3.049a2.545 2.545 0 0 1 2.545 2.564 2.53 2.53 0 0 1-.84 1.878.484.484 0 0 0-.152.5c.29 1.14.706 2.795 1 3.943.147.575-.29 1.133-.884 1.133H10.31c-.594 0-1.031-.558-.884-1.133.294-1.148.71-2.803 1-3.943a.484.484 0 0 0-.152-.5 2.53 2.53 0 0 1-.84-1.878 2.545 2.545 0 0 1 2.594-2.564z"/></svg>
+    Apple Podcasts
+  </a>
+  <span class="link-pill quiet" title="番組URLは準備中です">
+    Amazon Music
+  </span>
   <a class="link-pill" href="https://x.com/RT2231_scratch" target="_blank" rel="noopener">
     <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
     X
