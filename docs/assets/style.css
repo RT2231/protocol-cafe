@@ -1,0 +1,384 @@
+
+  :root {
+    --bg: #FBF7EF;
+    --card: #F3ECDD;
+    --line: #E3DCC9;
+    --line-strong: #D8CFB8;
+    --ink: #3D3223;
+    --ink-soft: #4A4030;
+    --ink-muted: #7A6E56;
+    --ink-faint: #8A7B5C;
+    --accent: #C1592F;
+    --accent-soft: #FAECE7;
+    --paper: #FFFDF8;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink-soft);
+    font-family: "Noto Sans JP", sans-serif;
+    line-height: 1.85;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a { color: inherit; }
+
+  .wrap {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 0 24px;
+  }
+
+  /* --- nav --- */
+  header.site-nav {
+    border-bottom: 1px solid var(--line);
+    background: var(--bg);
+  }
+  .nav-inner {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 18px 24px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .nav-inner .brand {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 700;
+    font-size: 16px;
+    letter-spacing: 0.02em;
+    color: var(--ink);
+    display: flex;
+    align-items: center;
+    gap: 8px;
+  }
+  .nav-inner .brand img {
+    width: 26px;
+    height: 26px;
+    border-radius: 50%;
+    display: block;
+  }
+  .nav-inner nav a {
+    font-size: 13px;
+    color: var(--ink-faint);
+    text-decoration: none;
+    margin-left: 20px;
+  }
+  .nav-inner nav a:hover { color: var(--ink); }
+
+  /* --- hero --- */
+  .hero {
+    text-align: center;
+    padding: 72px 24px 56px;
+  }
+  .hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.22em;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 700;
+    font-size: clamp(34px, 6vw, 52px);
+    color: var(--ink);
+    margin: 0 0 20px;
+    letter-spacing: 0.03em;
+  }
+  .hero .tagline {
+    font-size: 16px;
+    color: var(--ink-muted);
+    margin: 0 auto 32px;
+    max-width: 32em;
+  }
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: var(--ink);
+    color: var(--bg);
+    padding: 13px 28px;
+    border-radius: 26px;
+    font-size: 14px;
+    text-decoration: none;
+    font-weight: 500;
+    transition: opacity 0.15s ease;
+  }
+  .btn-primary:hover { opacity: 0.85; }
+  .btn-primary svg { width: 16px; height: 16px; }
+
+  .platform-links {
+    margin-top: 16px;
+    font-size: 13px;
+    color: var(--ink-faint);
+  }
+  .platform-links a {
+    color: var(--ink-muted);
+    text-decoration: underline;
+    text-underline-offset: 2px;
+    text-decoration-color: var(--line-strong);
+  }
+  .platform-links a:hover { color: var(--ink); }
+  .platform-links .sep { margin: 0 8px; color: var(--line-strong); }
+
+  /* --- section shared --- */
+  section {
+    padding: 44px 24px;
+    border-top: 1px solid var(--line);
+  }
+  .section-label {
+    font-size: 12px;
+    letter-spacing: 0.1em;
+    color: var(--ink-faint);
+    margin-bottom: 20px;
+  }
+
+  /* --- about --- */
+  .about p {
+    font-size: 15px;
+    margin: 0 0 1.2em;
+  }
+  .about p:last-child { margin-bottom: 0; }
+
+  /* --- episode embed --- */
+  .episode-embed iframe {
+    display: block;
+    width: 100%;
+    border-radius: 12px;
+    border: none;
+  }
+
+  /* --- regulars --- */
+  .regular-card {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin-bottom: 12px;
+  }
+  .regular-card:last-child { margin-bottom: 0; }
+  .regular-card.pending { opacity: 0.55; }
+
+  .avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--accent-soft);
+  }
+  .avatar.muted { background: #5F5E5A; color: #F1EFE8; }
+  .avatar svg { width: 22px; height: 22px; }
+
+  .regular-info .name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .regular-info .desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin: 0 0 8px;
+  }
+  .regular-info .desc:last-child { margin-bottom: 0; }
+  .episode-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    font-size: 12.5px;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 500;
+  }
+  .episode-link:hover { text-decoration: underline; }
+
+  /* --- footer --- */
+  footer {
+    padding: 32px 24px 48px;
+    border-top: 1px solid var(--line);
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+  }
+  .link-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border: 1px solid var(--line-strong);
+    border-radius: 20px;
+    padding: 9px 18px;
+    font-size: 13px;
+    color: var(--ink-soft);
+    text-decoration: none;
+  }
+  .link-pill:hover { border-color: var(--ink-faint); }
+  .link-pill svg { width: 15px; height: 15px; }
+  .link-pill.quiet {
+    color: var(--ink-faint);
+    border-style: dashed;
+    cursor: default;
+  }
+
+  @media (max-width: 480px) {
+    .hero { padding: 56px 20px 44px; }
+    section { padding: 36px 20px; }
+    .nav-inner nav a { margin-left: 14px; }
+  }
+
+  /* --- episode page --- */
+  .breadcrumb {
+    font-size: 12.5px;
+    color: var(--ink-faint);
+    margin-bottom: 18px;
+  }
+  .breadcrumb a { color: var(--ink-muted); text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+
+  .ep-hero {
+    padding: 48px 24px 8px;
+    text-align: left;
+  }
+  .ep-hero .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.14em;
+    color: var(--ink-faint);
+    margin-bottom: 14px;
+  }
+  .ep-hero h1 {
+    font-family: "Zen Old Mincho", serif;
+    font-weight: 700;
+    font-size: clamp(26px, 4.6vw, 36px);
+    color: var(--ink);
+    margin: 0 0 14px;
+    line-height: 1.5;
+  }
+  .ep-meta {
+    font-size: 13px;
+    color: var(--ink-faint);
+    margin-bottom: 4px;
+  }
+  .ep-meta span + span::before {
+    content: "・";
+    margin: 0 6px;
+    color: var(--line-strong);
+  }
+
+  .ep-synopsis {
+    font-size: 15px;
+    margin: 20px 0 0;
+  }
+
+  .ep-guest {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    background: var(--card);
+    border-radius: 12px;
+    padding: 18px 20px;
+    margin: 28px 0;
+  }
+  .ep-guest .avatar {
+    width: 46px;
+    height: 46px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--accent-soft);
+  }
+  .ep-guest .avatar svg { width: 22px; height: 22px; }
+  .ep-guest .name {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 4px;
+  }
+  .ep-guest .desc {
+    font-size: 13px;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .chapter-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  .chapter-item {
+    display: flex;
+    gap: 18px;
+    padding: 18px 0;
+    border-top: 1px solid var(--line);
+  }
+  .chapter-item:first-child { border-top: none; padding-top: 0; }
+  .chapter-time {
+    flex-shrink: 0;
+    width: 52px;
+    font-size: 13px;
+    color: var(--accent);
+    font-weight: 500;
+    padding-top: 1px;
+  }
+  .chapter-body .chapter-title {
+    font-size: 15px;
+    font-weight: 500;
+    color: var(--ink);
+    margin: 0 0 6px;
+  }
+  .chapter-body .chapter-desc {
+    font-size: 13.5px;
+    color: var(--ink-muted);
+    margin: 0;
+  }
+
+  .also-appears {
+    margin: 28px 0 0;
+  }
+  .also-appears .label {
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    color: var(--ink-faint);
+    margin-bottom: 10px;
+  }
+  .cameo-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .cameo-chip {
+    display: inline-block;
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    background: var(--card);
+    border-radius: 16px;
+    padding: 6px 14px;
+  }
+
+  .ep-nav {
+    display: flex;
+    justify-content: space-between;
+    gap: 16px;
+    padding-top: 28px;
+    margin-top: 12px;
+    border-top: 1px solid var(--line);
+    font-size: 13px;
+  }
+  .ep-nav a {
+    color: var(--ink-muted);
+    text-decoration: none;
+  }
+  .ep-nav a:hover { color: var(--ink); }
+  .ep-nav .disabled {
+    color: var(--line-strong);
+  }

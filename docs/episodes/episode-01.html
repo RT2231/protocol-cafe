@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>第1話「今日もひとっ走り、HTTP(S)」| プロトコル喫茶</title>
+<meta name="description" content="配達の合間にふらっと立ち寄った常連、HTTP(S)さんとの雑談回。GET/POST/PUT/DELETEの伝票の話から、ステータスコード、クッキー、そして「(S)」の正体まで。">
+
+<!-- Favicon -->
+<link rel="icon" type="image/x-icon" href="../assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="../assets/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../assets/favicon-16x16.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-touch-icon.png">
+<link rel="manifest" href="../assets/site.webmanifest">
+<meta name="theme-color" content="#FBF7EF">
+
+<!-- OGP -->
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="プロトコル喫茶">
+<meta property="og:title" content="第1話「今日もひとっ走り、HTTP(S)」| プロトコル喫茶">
+<meta property="og:description" content="配達の合間にふらっと立ち寄った常連、HTTP(S)さんとの雑談回。GET/POST/PUT/DELETEの伝票の話から、ステータスコード、クッキー、そして「(S)」の正体まで。">
+<meta property="og:url" content="https://rt2231.github.io/protocol-cafe/episodes/episode-01.html">
+<meta property="og:image" content="https://rt2231.github.io/protocol-cafe/assets/ogp-default.jpg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:locale" content="ja_JP">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="第1話「今日もひとっ走り、HTTP(S)」| プロトコル喫茶">
+<meta name="twitter:description" content="配達の合間にふらっと立ち寄った常連、HTTP(S)さんとの雑談回。">
+<meta name="twitter:image" content="https://rt2231.github.io/protocol-cafe/assets/ogp-default.jpg">
+<meta name="twitter:site" content="@RT2231_scratch">
+
+<!-- 構造化データ (schema.org PodcastEpisode) -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "PodcastEpisode",
+  "name": "第1話 今日もひとっ走り、HTTP(S)",
+  "url": "https://rt2231.github.io/protocol-cafe/episodes/episode-01.html",
+  "datePublished": "2026-08-26",
+  "description": "配達の合間にふらっと立ち寄った常連、HTTP(S)さんとの雑談回。GET/POST/PUT/DELETEの伝票の話から、ステータスコード、クッキー、そして「(S)」の正体まで。",
+  "image": "https://rt2231.github.io/protocol-cafe/assets/ogp-default.jpg",
+  "inLanguage": "ja",
+  "associatedMedia": {
+    "@type": "MediaObject",
+    "contentUrl": "https://open.spotify.com/episode/214F3nUhzZdUiW1NdBMKCK"
+  },
+  "partOfSeries": {
+    "@type": "PodcastSeries",
+    "name": "プロトコル喫茶",
+    "url": "https://rt2231.github.io/protocol-cafe/"
+  }
+}
+</script>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Zen+Old+Mincho:wght@500;700&family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+
+<header class="site-nav">
+  <div class="nav-inner">
+    <a href="../index.html" style="text-decoration:none;">
+      <span class="brand"><img src="../assets/apple-touch-icon.png" alt="プロトコル喫茶のロゴ">プロトコル喫茶</span>
+    </a>
+    <nav>
+      <a href="../index.html#about">番組について</a>
+      <a href="../index.html#episodes">エピソード</a>
+      <a href="../index.html#regulars">常連紹介</a>
+    </nav>
+  </div>
+</header>
+
+<div class="ep-hero">
+  <div class="wrap">
+    <p class="breadcrumb"><a href="../index.html">プロトコル喫茶</a> / 第1話</p>
+    <div class="eyebrow">EPISODE 01</div>
+    <h1>今日もひとっ走り、HTTP(S)</h1>
+    <p class="ep-meta"><span>2026年8月26日 配信</span><span>約7分</span></p>
+    <p class="ep-synopsis">配達の合間にふらっと店に立ち寄った、宅配便のお兄さん風の常連・HTTP(S)さん。長年の付き合いなのに、実はちゃんと聞いたことのなかった仕事の中身を、マスターがゆるく聞き出していきます。町の店への配達の仕組みから、配達結果の報告、実は忘れっぽいという意外な一面、そして名前の由来でもある「(S)」の正体まで。</p>
+  </div>
+</div>
+
+<section class="episode-embed">
+  <div class="wrap">
+    <iframe
+      src="https://open.spotify.com/embed/episode/214F3nUhzZdUiW1NdBMKCK?utm_source=generator"
+      width="100%"
+      height="152"
+      frameborder="0"
+      allowfullscreen=""
+      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+      loading="lazy"
+      title="第1話 今日もひとっ走り、HTTP(S) - Spotify埋め込みプレーヤー">
+    </iframe>
+    <p class="platform-links" style="margin-top:14px;">
+      <a href="https://podcasts.apple.com/us/podcast/プロトコル喫茶/id6805294348" target="_blank" rel="noopener">Apple Podcasts</a>
+      <span class="sep">/</span>
+      Amazon Musicでも配信中
+    </p>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="section-label">今回の常連</div>
+    <div class="ep-guest">
+      <div class="avatar">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+          <path d="M14 18V6a1 1 0 0 0-1-1H4a1 1 0 0 0-1 1v11a1 1 0 0 0 1 1h1"/>
+          <path d="M14 9h4l3 3v5a1 1 0 0 1-1 1h-1"/>
+          <circle cx="7" cy="18" r="2"/>
+          <circle cx="17" cy="18" r="2"/>
+        </svg>
+      </div>
+      <div>
+        <p class="name">HTTP(S)さん</p>
+        <p class="desc">町のあちこちの店に注文の品を届ける、宅配便のお兄さん。制服姿で台車を引きながら、配達の合間にふらっと店に立ち寄る常連。愛想がよく、仕事の合間の一服が好き。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="chapters">
+  <div class="wrap">
+    <div class="section-label">見どころ・チャプター</div>
+    <ul class="chapter-list">
+      <li class="chapter-item">
+        <div class="chapter-time">00:00</div>
+        <div class="chapter-body">
+          <p class="chapter-title">オープニング</p>
+          <p class="chapter-desc">配達中のHTTP(S)さんが、台車を止めていつもの一服に。長年の常連なのに、実はちゃんと仕事の話をしたことがなかった、というところから雑談がスタートします。</p>
+        </div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-time">00:37</div>
+        <div class="chapter-body">
+          <p class="chapter-title">町の店への配達</p>
+          <p class="chapter-desc">「これください」のGET、「新しく預けます」のPOST、「差し替えといてください」のPUT、「引き取ってください」のDELETE。町のあちこちの店に伝票を届ける仕組みを、宅配の比喩でひもときます。町の住所録係・DNSちゃんとの持ちつ持たれつな関係も。</p>
+        </div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-time">02:19</div>
+        <div class="chapter-body">
+          <p class="chapter-title">配達の結果報告</p>
+          <p class="chapter-desc">「200」は配達完了、「404」は住所が存在しない、「500」は配送センター側のトラブル。ステータスコードの正体と、几帳面な配達仲間・TCPの兄貴が裏で支えてくれている話。</p>
+        </div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-time">03:33</div>
+        <div class="chapter-body">
+          <p class="chapter-title">実は忘れっぽい</p>
+          <p class="chapter-desc">受け取りサインをもらった瞬間、配達先のことをきれいさっぱり忘れてしまうというHTTP(S)さん。その身軽さの理由と、「クッキー」という会員カードで代わりに覚えておいてもらう仕組みの話。</p>
+        </div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-time">05:09</div>
+        <div class="chapter-body">
+          <p class="chapter-title">「S」の正体</p>
+          <p class="chapter-desc">名前の括弧の中にある「S」は、警備員気質の相棒の名前だった。鍵付きケースで大事な荷物を守ってくれる、その正体と、ブラウザの鍵マークの意味が明かされます。</p>
+        </div>
+      </li>
+      <li class="chapter-item">
+        <div class="chapter-time">06:45</div>
+        <div class="chapter-body">
+          <p class="chapter-title">エンディング</p>
+          <p class="chapter-desc">長年の付き合いで初めて聞けた仕事の話に、マスターもしみじみ。次の配達に向かうHTTP(S)さんを見送りながら、次はどんな常連が顔を出すのか、という余韻で幕を閉じます。</p>
+        </div>
+      </li>
+    </ul>
+
+    <div class="also-appears">
+      <div class="label">今回名前が挙がった常連たち</div>
+      <div class="cameo-list">
+        <span class="cameo-chip">DNSちゃん(町の住所録係)</span>
+        <span class="cameo-chip">TCPの兄貴(几帳面な輸送品質担当)</span>
+        <span class="cameo-chip">S / TLS(警備員気質の相棒)</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="ep-nav">
+    <span class="disabled">← 前のエピソード</span>
+    <a href="../index.html">番組トップへ戻る</a>
+  </div>
+</div>
+
+<footer>
+  <a class="link-pill" href="https://open.spotify.com/show/033EqVFt9xoLTCfYa4RJBw" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12 0C5.4 0 0 5.4 0 12s5.4 12 12 12 12-5.4 12-12S18.66 0 12 0zm5.521 17.34c-.24.359-.66.48-1.021.24-2.82-1.74-6.36-2.101-10.561-1.141-.418.122-.779-.179-.899-.539-.12-.421.18-.78.54-.9 4.56-1.021 8.52-.6 11.64 1.32.42.18.479.659.301 1.02zm1.44-3.3c-.301.42-.841.6-1.262.3-3.239-1.98-8.159-2.58-11.939-1.38-.479.12-1.02-.12-1.14-.6-.12-.48.12-1.021.6-1.141C9.6 9.9 15 10.561 18.72 12.84c.361.181.54.78.241 1.2zm.12-3.36C15.24 8.4 8.82 8.16 5.16 9.301c-.6.179-1.2-.181-1.38-.721-.18-.601.18-1.2.72-1.381 4.26-1.26 11.28-1.02 15.721 1.621.539.3.719 1.02.419 1.56-.299.421-1.02.599-1.559.3z"/></svg>
+    Spotify
+  </a>
+  <a class="link-pill" href="https://podcasts.apple.com/us/podcast/プロトコル喫茶/id6805294348" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M12.008 0C5.375 0 0 5.376 0 12.008c0 6.633 5.376 12.009 12.008 12.009 6.633 0 12.009-5.376 12.009-12.009C24.017 5.376 18.641 0 12.008 0zm0 3.694a5.61 5.61 0 0 1 5.612 5.577c.006 1.911-.995 3.59-1.968 4.674a.51.51 0 0 1-.856-.155c-.135-.354-.276-.703-.416-1.049-.064-.156-.017-.336.115-.44a4.14 4.14 0 0 0 1.586-3.243 4.076 4.076 0 0 0-4.093-4.079 4.075 4.075 0 0 0-4.05 4.128 4.14 4.14 0 0 0 1.622 3.222c.13.104.176.281.114.436-.139.349-.279.7-.413 1.052a.51.51 0 0 1-.858.152C7.42 12.28 6.393 10.588 6.4 8.665a5.61 5.61 0 0 1 5.608-4.971zm.02 3.049a2.545 2.545 0 0 1 2.545 2.564 2.53 2.53 0 0 1-.84 1.878.484.484 0 0 0-.152.5c.29 1.14.706 2.795 1 3.943.147.575-.29 1.133-.884 1.133H10.31c-.594 0-1.031-.558-.884-1.133.294-1.148.71-2.803 1-3.943a.484.484 0 0 0-.152-.5 2.53 2.53 0 0 1-.84-1.878 2.545 2.545 0 0 1 2.594-2.564z"/></svg>
+    Apple Podcasts
+  </a>
+  <span class="link-pill quiet" title="番組URLは準備中です">
+    Amazon Music
+  </span>
+  <a class="link-pill" href="https://x.com/RT2231_scratch" target="_blank" rel="noopener">
+    <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+    X
+  </a>
+</footer>
+
+</body>
+</html>
