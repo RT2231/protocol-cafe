@@ -424,21 +424,47 @@
     margin: 0;
   }
 
+  .ep-list-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 16px;
+  }
+
   .ep-list-card {
-    display: block;
-    background: var(--card);
-    border-radius: 12px;
-    padding: 22px 22px;
-    margin-bottom: 14px;
+    display: flex;
+    flex-direction: column;
+    background: var(--paper);
+    border: 1px solid var(--line);
+    border-radius: 16px;
+    padding: 22px 20px;
     text-decoration: none;
     color: inherit;
-    transition: opacity 0.15s ease;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, border-color 0.15s ease;
   }
-  .ep-list-card:hover { opacity: 0.82; }
-  .ep-list-card:last-child { margin-bottom: 0; }
+  .ep-list-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(61, 50, 35, 0.08);
+    border-color: var(--line-strong);
+  }
+
+  .ep-list-card .ep-list-avatar {
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--accent);
+    color: var(--accent-soft);
+    margin-bottom: 16px;
+  }
+  .ep-list-card .ep-list-avatar svg { width: 21px; height: 21px; }
+  .ep-list-card .ep-list-avatar.muted { background: #5F5E5A; color: #F1EFE8; }
+
   .ep-list-card .ep-list-eyebrow {
-    font-size: 11.5px;
-    letter-spacing: 0.1em;
+    font-size: 11px;
+    letter-spacing: 0.12em;
     color: var(--accent);
     font-weight: 500;
     margin-bottom: 8px;
@@ -446,29 +472,36 @@
   .ep-list-card .ep-list-title {
     font-family: "Zen Old Mincho", serif;
     font-weight: 700;
-    font-size: 19px;
+    font-size: 17px;
     color: var(--ink);
-    margin: 0 0 8px;
-    line-height: 1.5;
+    margin: 0 0 10px;
+    line-height: 1.55;
+    flex-grow: 1;
   }
   .ep-list-card .ep-list-meta {
-    font-size: 12.5px;
+    font-size: 12px;
     color: var(--ink-faint);
-    margin-bottom: 10px;
+    margin-bottom: 0;
   }
   .ep-list-card .ep-list-meta span + span::before {
     content: "・";
     margin: 0 6px;
     color: var(--line-strong);
   }
-  .ep-list-card .ep-list-synopsis {
-    font-size: 13.5px;
-    color: var(--ink-muted);
-    margin: 0;
-  }
 
   .ep-list-card.pending {
-    opacity: 0.55;
+    background: transparent;
+    border-style: dashed;
+    opacity: 0.6;
     cursor: default;
   }
-  .ep-list-card.pending:hover { opacity: 0.55; }
+  .ep-list-card.pending:hover {
+    transform: none;
+    box-shadow: none;
+    border-color: var(--line);
+  }
+
+  @media (max-width: 480px) {
+    .ep-list-grid { grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 12px; }
+    .ep-list-card { padding: 18px 16px; }
+  }
