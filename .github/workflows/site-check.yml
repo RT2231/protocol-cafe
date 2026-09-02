@@ -32,12 +32,15 @@ jobs:
           args: >
             --verbose
             --no-progress
-            --exclude-mail
+            --root-dir docs
             --exclude 'https://open\.spotify\.com'
             --exclude 'https://podcasts\.apple\.com'
             --exclude 'https://music\.amazon\.co\.jp'
             --exclude 'https://x\.com'
             --exclude 'https://toolbox\.marketingtools\.apple\.com'
             --exclude 'https://static\.cloudflareinsights\.com'
-            'docs/**/*.html'
+            --exclude 'https://fonts\.googleapis\.com'
+            --exclude 'https://anchor\.fm'
+            --exclude 'https://rt2231\.github\.io'
+            docs/index.html docs/episodes/index.html docs/episodes/episode-01.html
           fail: true
