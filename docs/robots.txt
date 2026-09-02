@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://rt2231.github.io/protocol-cafe/sitemap.xml
