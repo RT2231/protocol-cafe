@@ -96,7 +96,7 @@
 <header class="site-nav">
   <div class="nav-inner">
     <a href="../index.html" style="text-decoration:none;">
-      <span class="brand"><img src="../assets/apple-touch-icon.png" alt="プロトコル喫茶のロゴ" width="26" height="26">プロトコル喫茶</span>
+      <span class="brand"><img src="../assets/nav-logo.png" alt="プロトコル喫茶のロゴ" width="26" height="26">プロトコル喫茶</span>
     </a>
     <nav>
       <a href="../index.html#about">番組について</a>
@@ -118,13 +118,30 @@
 
 <section class="episode-embed">
   <div class="wrap">
-    <iframe
-      src="https://open.spotify.com/embed/episode/214F3nUhzZdUiW1NdBMKCK?utm_source=generator&si=ZAnr33WMTIqgmcchawR90A"
-      height="152"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      title="第1話 今日もひとっ走り、HTTP(S) - Spotify埋め込みプレーヤー">
-    </iframe>
+    <div class="spotify-facade" id="spotify-facade-ep01">
+      <button type="button" class="spotify-facade-btn" onclick="
+        var f = document.getElementById('spotify-facade-ep01');
+        var i = document.createElement('iframe');
+        i.src = 'https://open.spotify.com/embed/episode/214F3nUhzZdUiW1NdBMKCK?utm_source=generator&si=ZAnr33WMTIqgmcchawR90A';
+        i.height = '152';
+        i.allowFullscreen = true;
+        i.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+        i.title = '第1話 今日もひとっ走り、HTTP(S) - Spotify埋め込みプレーヤー';
+        i.style.width = '100%';
+        i.style.border = 'none';
+        i.style.borderRadius = '12px';
+        i.style.display = 'block';
+        f.replaceWith(i);
+      ">
+        <span class="play-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="facade-text">
+          <span class="facade-title">第1話「今日もひとっ走り、HTTP(S)」</span>
+          <span class="facade-sub">タップしてSpotifyプレーヤーを読み込む</span>
+        </span>
+      </button>
+    </div>
     <p class="platform-links" style="margin-top:14px;">
       <a class="apple-badge-inline" href="https://podcasts.apple.com/jp/podcast/%E3%83%97%E3%83%AD%E3%83%88%E3%82%B3%E3%83%AB%E5%96%AB%E8%8C%B6/id6805294348?itscg=30200&itsct=podcast_box_badge&ls=1&mttnsubad=6805294348" target="_blank" rel="noopener"><img src="https://toolbox.marketingtools.apple.com/api/v2/badges/listen-on-apple-podcasts/mono-black-26/ja-jp" alt="Apple Podcastで聴く" width="330" height="82"></a>
       <span class="sep">/</span>

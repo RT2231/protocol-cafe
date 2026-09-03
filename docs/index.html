@@ -85,7 +85,7 @@
 
 <header class="site-nav">
   <div class="nav-inner">
-    <span class="brand"><img src="assets/apple-touch-icon.png" alt="プロトコル喫茶のロゴ" width="26" height="26">プロトコル喫茶</span>
+    <span class="brand"><img src="assets/nav-logo.png" alt="プロトコル喫茶のロゴ" width="26" height="26">プロトコル喫茶</span>
     <nav>
       <a href="#about">番組について</a>
       <a href="episodes/index.html">エピソード</a>
@@ -124,13 +124,30 @@
 <section id="episodes" class="episode-embed">
   <div class="wrap">
     <div class="section-label">最新エピソード</div>
-    <iframe
-      src="https://open.spotify.com/embed/episode/214F3nUhzZdUiW1NdBMKCK?utm_source=generator&si=ZAnr33WMTIqgmcchawR90A"
-      height="152"
-      allowfullscreen=""
-      allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-      title="第1話 今日もひとっ走り、HTTP(S) - Spotify埋め込みプレーヤー">
-    </iframe>
+    <div class="spotify-facade" id="spotify-facade-home">
+      <button type="button" class="spotify-facade-btn" onclick="
+        var f = document.getElementById('spotify-facade-home');
+        var i = document.createElement('iframe');
+        i.src = 'https://open.spotify.com/embed/episode/214F3nUhzZdUiW1NdBMKCK?utm_source=generator&si=ZAnr33WMTIqgmcchawR90A';
+        i.height = '152';
+        i.allowFullscreen = true;
+        i.allow = 'autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture';
+        i.title = '第1話 今日もひとっ走り、HTTP(S) - Spotify埋め込みプレーヤー';
+        i.style.width = '100%';
+        i.style.border = 'none';
+        i.style.borderRadius = '12px';
+        i.style.display = 'block';
+        f.replaceWith(i);
+      ">
+        <span class="play-circle">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+        <span class="facade-text">
+          <span class="facade-title">第1話「今日もひとっ走り、HTTP(S)」</span>
+          <span class="facade-sub">タップしてSpotifyプレーヤーを読み込む</span>
+        </span>
+      </button>
+    </div>
   </div>
 </section>
 
